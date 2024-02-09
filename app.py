@@ -21,6 +21,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.post("/check", tags=["Root"])
+async def read_root(image:UploadFile = File(...)):
+    # result = image_results[image.filename.split(".")[0]]
+    return {"hello":"hello"}
+
 @app.post("/getAnswer", tags=["Root"])
 async def read_root(image:UploadFile = File(...)):
     result = image_results[image.filename.split(".")[0]]
