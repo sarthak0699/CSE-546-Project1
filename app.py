@@ -21,8 +21,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/check", tags=["Root"])
-async def read_root(image:UploadFile = File(...)):
+@app.get("/check", tags=["Root"])
+async def read_root():
     # result = image_results[image.filename.split(".")[0]]
     return {"hello":"hello"}
 
